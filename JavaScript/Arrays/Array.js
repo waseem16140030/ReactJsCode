@@ -139,3 +139,104 @@ const Allpositive=Test.filter(function(value){
 });
 console.log('Array containing all positives', Allpositive);
 /***************************Filtering Array end********************** */
+
+
+/***************************Mapping Array********************** */
+const mapArray=Allpositive.map(function(num){
+    return '<li>'+ num + '</li>';
+});
+console.log(mapArray);
+
+/***************************Mapping Array ends********************** */
+
+/***************************Reducing Arrays********************** */
+const sumArray=[1,3,4,5, -1, 3];
+const sum=sumArray.reduce(function(accumelator, sum)
+{
+    return accumelator+sum;
+}, 0);
+console.log('sum 0f Array is', sum);
+/***************************Reducing Arrays ends********************** */
+
+/***************************Exercise 1********************** */
+function arrayFromRange(min, max){
+    const outPut=[];
+    for(let i=min; i<=max; i++){
+        outPut.push(i);
+    }
+    return outPut;
+}
+const newArray=arrayFromRange(-11,0);
+console.log('Array From a range',newArray);
+/***************************Exercise 1 ends********************** */
+
+/***************************Exercie 2 Includes?********************** */
+function isInclude(array, element){
+    let Flag=false;
+  for(let key of array){
+      if(key===element){
+          Flag= true;
+      }
+  }
+  return Flag;
+}
+const chek=isInclude(newArray, 0);
+console.log(chek);
+/***************************Exercie 2 Includes end?********************** */
+
+/***************************Exercie 3 Exclude Value********************** */
+function excludeValue(array, exclude){
+    const excluded=[];
+    for(let key of array){
+        if(!exclude.includes(key)){
+            excluded.push(key);
+        }
+    }
+    return excluded;
+}
+const output2=excludeValue(newArray, [1,-1,2,0,-10, -7]);
+console.log('Array Excluding elelments',output2);
+
+/***************************Exercie 3 Exclude Value ends********************** */
+const countElement=[1,22,4,4,4,56,7];
+function countNumber(array, element){
+    let sum=0;
+    for(let key of array){
+        if(key===element){
+            sum++;
+        }
+    }
+    return sum;
+}
+const occurence=countNumber(countElement, 7);
+console.log(occurence);
+/***************************Exercie 3 Exclude Value ends********************** */
+
+/***************************Exercie 4 GetMax********************** */
+function getMax(array){
+    let max=array[0];
+    for(let i=1; i<array.length; i++){
+        if(array[i]>max){
+            max=array[i];
+        }
+    }
+    return max;
+}
+const arry2=[4,6,7,8,9,34]
+const max=getMax(arry2);
+console.log('maximum in array is', max);
+/***************************Exercie 4 GetMax ends********************** */
+
+
+/***************************Exercie 5 Movies********************** */
+const Movies=[
+    {title:'a', year:2017, rating: 4.3},
+    {title:'b', year:2016, rating: 4.5},
+    {title:'c', year:2018, rating: 4},
+    {title:'d', year:2019, rating: 4.5},
+    {title:'a', year:2021, rating: 5.5},
+    {title:'f', year:2012, rating: 5.5},
+]
+//can't solve yet
+/***************************Exercie 5 Movies ends********************** */
+
